@@ -5,7 +5,7 @@
 	
 	<body>
 		<h1> Student Record </h1>
-		<table id="student_table">
+		<table id="student_table" border = "1">
 		</table>
 	
 		<script>
@@ -27,6 +27,7 @@
 			const inputLastName = document.createElement("input");
 			inputLastName.type="text"
 			inputLastName.placeholder="Insert Last Name";
+			inputLastName.name="last_name";
 			
 			row2col1.append(inputLastName);
 			
@@ -35,14 +36,27 @@
 			const inputFirstName = document.createElement("input");
 			inputFirstName.type="text"
 			inputFirstName.placeholder="Insert First Name";
+			inputFirstName.name="first_name";
 			
 			row2col2.append(inputFirstName);
 			
 			const row3 = studentTable.insertRow();
-			const row3col1 = row3.inserCell();
+			const row3col1 = row3.insertCell();
 			row3col1.colSpan="2";
-			row3col1.innerHTML="TEST";
 			
+			const inputSubmit = document.createElement("input");
+			inputSubmit.type="submit";
+			inputSubmit.value="Create Record";
+			
+			row3col1.append(inputSubmit);
+			
+			const studentForm = document.createElement("form");
+			studentForm.append(studentTable);
+			studentForm.action="create.php"
+			studentForm.method="POST"
+			
+			 body = document.getElementsByTagName('body')[0];
+			 body.append(studentForm);
 		</script>
 	</body>
 </html>
