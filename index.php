@@ -21,8 +21,8 @@
 			
 			
 			const row2 = studentTable.insertRow();
-			const row2col1 = row1.insertCell();
-			const row2col2 = row1.insertCell();
+			const row2col1 = row2.insertCell();
+			const row2col2 = row2.insertCell();
 			
 			const inputLastName = document.createElement("input");
 			inputLastName.type="text"
